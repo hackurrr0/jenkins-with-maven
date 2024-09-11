@@ -43,7 +43,7 @@
     </distributionManagement>
 
     <pluginRepositories>
-        <pluginRepository>    
+        <pluginRepository>
             <id>maven1</id>
             <name>Maven.org</name>
             <url>http://repo1.maven.org/maven2</url>
@@ -59,6 +59,17 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Add the maven-war-plugin configuration -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+                <configuration>
+                    <!-- Optional: specify additional configurations here -->
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
         </plugins>
