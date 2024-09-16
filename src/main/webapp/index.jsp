@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Hand Animation</title>
+    <title>Full Body Animation</title>
     <style>
         body {
             margin: 0;
@@ -14,32 +14,99 @@
             background-color: #f0f0f0;
         }
 
-        .hand {
+        .person {
             position: relative;
+            width: 150px;
+            height: 300px;
+        }
+
+        .head {
+            width: 100px;
+            height: 100px;
+            background-color: #E4C560;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 25px;
+        }
+
+        .body {
             width: 100px;
             height: 120px;
+            background-color: #E4C560;
+            position: absolute;
+            top: 100px;
+            left: 25px;
+            border-radius: 30px;
+        }
+
+        .leg {
+            width: 40px;
+            height: 80px;
+            background-color: #E4C560;
+            position: absolute;
+            bottom: 0;
+            border-radius: 20px;
+        }
+
+        .leg.left {
+            left: 10px;
+        }
+
+        .leg.right {
+            right: 10px;
+        }
+
+        .arm {
+            width: 30px;
+            height: 100px;
+            background-color: #E4C560;
+            position: absolute;
+            top: 100px;
+            border-radius: 20px;
+        }
+
+        .arm.left {
+            left: -30px;
+            transform-origin: right center;
+            transform: rotate(-30deg);
+        }
+
+        .arm.right {
+            right: -30px;
+            transform-origin: left center;
+            transform: rotate(30deg);
+        }
+
+        .hand {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background-color: #E4C560;
+            border-radius: 20px;
+            top: 190px;
+        }
+
+        .hand.left {
+            left: -40px;
+        }
+
+        .hand.right {
+            right: -40px;
         }
 
         .hand:before {
             content: '';
             display: block;
             width: 200%;
-            height: 100%;
+            height: 50%;
             position: absolute;
-            top: 60%;
+            top: 50%;
             left: -50%;
             background-color: black;
             border-radius: 50%;
             filter: blur(10px);
             opacity: 0.2;
-        }
-
-        .palm {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #E4C560;
-            border-radius: 50% 50% 40% 40% / 50% 50% 40% 40%;
         }
 
         .thumb {
@@ -149,13 +216,29 @@
     </style>
 </head>
 <body>
-    <div class="hand">
-        <div class="palm"></div>
-        <div class="thumb"></div>
-        <div class="finger"></div>
-        <div class="finger"></div>
-        <div class="finger"></div>
-        <div class="finger"></div>
+    <div class="person">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+        <div class="arm left">
+            <div class="hand left">
+                <div class="thumb"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+            </div>
+        </div>
+        <div class="arm right">
+            <div class="hand right">
+                <div class="thumb"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
